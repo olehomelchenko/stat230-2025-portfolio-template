@@ -2,7 +2,7 @@
 
 This is a quick-start guide to help you get started with the portfolio template.
 
-**📖 For complete requirements, grading rubric, and detailed instructions, see `ASSIGNMENT.md`**
+**📖 For complete requirements, grading rubric, and detailed instructions, see `docs/ASSIGNMENT.md`**
 
 ## 📋 Quick Overview
 
@@ -56,7 +56,7 @@ The template has placeholders for:
 - **Key Insights:** What did you discover?
 - **Data Source:** Where is the data from? (include link)
 
-**See `ASSIGNMENT.md` for detailed requirements and the visualization quality checklist**
+**See `docs/ASSIGNMENT.md` for detailed requirements and the visualization quality checklist**
 
 ---
 
@@ -72,5 +72,5 @@ The template has placeholders for:
 
 ## 📚 Additional Resources
 
-- **`ASSIGNMENT.md`** - Complete requirements, grading rubric, and policies
-- **`PUBLISHING.md`** - Optional guide for publishing to GitHub Pages (not graded)
+- **`docs/ASSIGNMENT.md`** - Complete requirements, grading rubric, and policies
+- **`docs/PUBLISHING.md`** - Optional guide for publishing to GitHub Pages (not graded)
