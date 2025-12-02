@@ -106,7 +106,7 @@
              VISUALIZATION 1: VEGA-LITE EXAMPLE
 
              Copy this <article> block to add more visualizations.
-             For other viz types, see examples below (Tableau, images).
+             For other viz types, see examples below (Tableau, R/ggplot2, images).
              See ASSIGNMENT.md for quality checklist requirements.
              ============================================ -->
         <article>
@@ -223,9 +223,7 @@
                  ========================================== -->
 
             <div style="border: 2px dashed #ccc; padding: 20px; text-align: center; margin: 20px 0;">
-                <p><strong>⚠️ REPLACE THIS SECTION</strong></p>
-                <p>Paste your Tableau Public embed code here</p>
-                <p><small>Delete this placeholder div entirely and replace with your embed code</small></p>
+                <div class='tableauPlaceholder' id='viz1764686803248' style='position: relative'><noscript><a href='#'><img alt='Sheet 1 ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;fi&#47;finalprojectexampletableau&#47;Sheet1&#47;1_rss.png' style='border: none' /></a></noscript><object class='tableauViz'  style='display:none;'><param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> <param name='embed_code_version' value='3' /> <param name='site_root' value='' /><param name='name' value='finalprojectexampletableau&#47;Sheet1' /><param name='tabs' value='no' /><param name='toolbar' value='yes' /><param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;fi&#47;finalprojectexampletableau&#47;Sheet1&#47;1.png' /> <param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' /><param name='display_spinner' value='yes' /><param name='display_overlay' value='yes' /><param name='display_count' value='yes' /><param name='language' value='en-US' /></object></div>                <script type='text/javascript'>                    var divElement = document.getElementById('viz1764686803248');                    var vizElement = divElement.getElementsByTagName('object')[0];                    vizElement.style.width='100%';vizElement.style.height=(divElement.offsetWidth*0.75)+'px';                    var scriptElement = document.createElement('script');                    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    vizElement.parentNode.insertBefore(scriptElement, vizElement);                </script>
             </div>
 
             <h3>Key Insights</h3>
@@ -239,12 +237,70 @@
         </article>
 
         <!-- ============================================
-             VISUALIZATION 3: STATIC IMAGE EXAMPLE
+             VISUALIZATION 3: R (ggplot2) EXAMPLE
+             External library example - export as image
+             ============================================ -->
+        <article>
+            <header>
+                <h2>3. Using External Libraries: R + ggplot2 Example</h2>
+            </header>
+
+            <h3>Context & Question</h3>
+            <p>
+                This example demonstrates how to use external visualization libraries
+                like R's ggplot2. You can create visualizations in your preferred
+                tool/language, export them as images, and include them in your portfolio.
+            </p>
+
+            <h3>Design Decisions</h3>
+            <p>
+                This visualization was created using R and the ggplot2 library,
+                a powerful tool for creating publication-quality graphics. The code
+                loads city population data and creates a line chart showing population
+                trends over time for different cities. After creating the visualization
+                in R, it was exported as a PNG image and included in the portfolio.
+            </p>
+
+            <!-- R CODE BLOCK -->
+            <details>
+                <summary><strong>📝 Click to view R code</strong></summary>
+                <pre style="background: #f5f5f5; padding: 15px; border-radius: 5px; overflow-x: auto;"><code>install.packages("ggplot2")
+library(ggplot2)
+
+data <- read.csv('assets/city-population.csv')
+
+ggplot(data, aes(x = Year, y = population,
+                 color = Entity)) + geom_line()</code></pre>
+            </details>
+
+            <!-- STATIC IMAGE -->
+            <!-- ==========================================
+                 Export as PNG/SVG, save in assets folder.
+                 Include image file in your ZIP.
+                 ========================================== -->
+
+            <img src="assets/ggplot-example.png"
+                 alt="City population trends over time created with ggplot2"
+                 style="max-width: 100%; height: auto; border: 1px solid #ddd;">
+
+            <h3>Key Insights</h3>
+            <p>
+                [When using your own data: Describe the patterns, trends, or outliers
+                you discovered. What should viewers take away from this visualization?]
+            </p>
+
+            <footer>
+                <strong>Data Source:</strong> assets/city-population.csv
+            </footer>
+        </article>
+
+        <!-- ============================================
+             VISUALIZATION 4: STATIC IMAGE EXAMPLE (TEMPLATE)
              For Python/R/other tools - export as image
              ============================================ -->
         <article>
             <header>
-                <h2>3. [Title of Your Third Visualization]</h2>
+                <h2>4. [Title of Your Visualization]</h2>
             </header>
 
             <h3>Context & Question</h3>
@@ -279,12 +335,12 @@
         </article>
 
         <!-- ============================================
-             VISUALIZATION 4 - Copy a template above
+             VISUALIZATION 5 - Copy a template above
              Minimum 5 visualizations required!
              ============================================ -->
         <article>
             <header>
-                <h2>4. [Title of Your Fourth Visualization]</h2>
+                <h2>5. [Title of Your Fifth Visualization]</h2>
             </header>
 
             <h3>Context & Question</h3>
@@ -296,7 +352,7 @@
             <!-- Add your visualization here (copy from examples above) -->
             <div style="border: 2px dashed #ccc; padding: 40px; text-align: center;">
                 <p><strong>Add your visualization here</strong></p>
-                <p>Copy one of the templates above (Vega-Lite, Tableau, or Image)</p>
+                <p>Copy one of the templates above (Vega-Lite, Tableau, R/Python, or Image)</p>
             </div>
 
             <h3>Key Insights</h3>
@@ -308,12 +364,12 @@
         </article>
 
         <!-- ============================================
-             VISUALIZATION 5 - Copy a template above
+             VISUALIZATION 6 - Copy a template above
              This is the minimum. You can add more!
              ============================================ -->
         <article>
             <header>
-                <h2>5. [Title of Your Fifth Visualization]</h2>
+                <h2>6. [Title of Your Sixth Visualization]</h2>
             </header>
 
             <h3>Context & Question</h3>
