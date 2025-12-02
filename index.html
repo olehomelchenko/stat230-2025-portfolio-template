@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Visualization Portfolio - [Your Name]</title>
+
+    <!-- Pico.css for clean, minimal styling -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css">
+
+    <!-- Vega-Lite library for interactive visualizations -->
+    <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-lite@5"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
+
+    <style>
+        /* KSE Brand: Override Pico.css with official colors */
+        :root {
+            --pico-primary: rgb(0, 57, 100); /* KSE Dark Midnight Blue */
+            --pico-primary-hover: rgb(0, 77, 130);
+        }
+
+        /* KSE Typography */
+        body { line-height: 1.3; }
+        h1, h2, h3, h4, h5, h6 { line-height: 1.15; }
+
+        /* Visualization containers */
+        article > div { width: 100%; min-height: 400px; }
+    </style>
+</head>
+
+<body>
+    <main class="container">
+        
+        <!-- ============================================
+             GETTING STARTED - READ THIS FIRST!
+             ============================================
+
+             HOW TO USE THIS TEMPLATE:
+             1. Replace all [placeholder text] in square brackets with your content
+             2. Copy visualization sections to add more (you need minimum 5)
+             3. Test by opening this file in your browser
+             4. Delete instructional comments before submitting
+
+             📖 FOR COMPLETE REQUIREMENTS: See ASSIGNMENT.md
+
+             Quick checklist:
+             - Replace [Your Name], video link, and introduction theme
+             - Add 5+ visualizations with context, design decisions, insights, sources
+             - Include unified theme connecting all visualizations
+             - Embed your 5-7 minute video presentation link
+
+             ============================================ -->
+
+        <!-- ============================================
+             HEADER SECTION - Replace with your information
+             ============================================ -->
+        <hgroup>
+            <h1>[Your Full Name]</h1>
+            <p>Data Visualization Portfolio</p>
+            <p>Principles of Data Visualization | KSE | Fall 2025</p>
+        </hgroup>
+
+        <!-- ============================================
+             VIDEO PRESENTATION - Add your video link
+             Required: 5-7 minutes, covers theme + key visualizations
+             See ASSIGNMENT.md for detailed video requirements
+             ============================================ -->
+        <article>
+            <header>
+                <h2>📹 Video Presentation</h2>
+            </header>
+            <p>
+                <strong>Watch my portfolio walkthrough (5-7 minutes):</strong><br>
+                <a href="[YOUR VIDEO LINK HERE]" target="_blank" role="button">
+                    ▶️ View Video Presentation
+                </a>
+            </p>
+            <p>
+                <small>
+                    <em>Note: If using Google Drive, make sure to enable external access to your video!</em>
+                </small>
+            </p>
+        </article>
+
+        <!-- ============================================
+             INTRODUCTION - Explain your unified THEME (3-5 sentences)
+
+             Your theme should connect all visualizations around a common
+             question or domain. See ASSIGNMENT.md for examples.
+             ============================================ -->
+        <article>
+            <header>
+                <h2>Introduction</h2>
+            </header>
+            <p>
+                [Write your portfolio theme here (3-5 sentences). Explain what unifying theme connects your visualizations.
+                What overarching question are you exploring? Why did you choose
+                this topic? How do your 5+ visualizations work together to tell
+                a complete story?]
+            </p>
+        </article>
+
+        <!-- ============================================
+             VISUALIZATION 1: VEGA-LITE EXAMPLE
+
+             Copy this <article> block to add more visualizations.
+             For other viz types, see examples below (Tableau, images).
+             See ASSIGNMENT.md for quality checklist requirements.
+             ============================================ -->
+        <article>
+            <header>
+                <h2>1. [Descriptive Title of Your Visualization]</h2>
+            </header>
+
+            <!-- CONTEXT & QUESTION (1-2 sentences) -->
+            <h3>Context & Question</h3>
+            <p>
+                [What analytical question does this address? Why is it important?]
+            </p>
+
+            <!-- DESIGN DECISIONS (2-3 sentences) -->
+            <h3>Design Decisions</h3>
+            <p>
+                [Chart type rationale, visual encodings, alternatives considered, tradeoffs]
+            </p>
+
+            <!-- THE VISUALIZATION -->
+            <div id="vis1"></div>
+
+            <script type="text/javascript">
+                /* ==========================================
+                   VEGA-LITE SPECIFICATION
+
+                   Replace the spec below with your Vega-Lite JSON.
+                   Set "width": "container" and "height": 400
+
+                   For CSV data: "data": {"url": "your-file.csv"}
+                   (Include CSV file in your ZIP!)
+                   ========================================== */
+                
+                var spec1 = {
+                    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+                    "description": "city population",
+                    "width": "container",
+                    "height": 400,
+                    "data": {
+                        // OPTION 1: Inline data (small datasets)
+                        // "values": [
+                        //     { "category": "A", "value": 28 },
+                        //     { "category": "B", "value": 55 },
+                        //     { "category": "C", "value": 43 },
+                        //     { "category": "D", "value": 91 },
+                        //     { "category": "E", "value": 81 }
+                        // ]
+                        // OPTION 2: External file (larger datasets)
+                        "url": "assets/city-population.csv"
+                    },
+                    "mark": "line",
+                    "encoding": {
+                        "x": { 
+                            "field": "Year", 
+                            "type": "ordinal", 
+                            "axis": { "title": "Year" }
+                        },
+                        "y": {
+                            "field": "population", 
+                            "type": "quantitative", 
+                            "axis": { "title": "Population" } 
+                        },
+                        "color": {
+                            "field": "Entity"
+                        }
+                    }
+                };
+
+                // This line embeds the visualization - don't change this
+                vegaEmbed('#vis1', spec1, { actions: false });
+            </script>
+
+            <!-- KEY INSIGHTS (2-3 sentences) -->
+            <h3>Key Insights</h3>
+            <p>
+                [Patterns, trends, outliers discovered. What viewers should take away.]
+            </p>
+
+            <!-- DATA SOURCE -->
+            <footer>
+                <strong>Data Source:</strong>
+                [Dataset name, organization, year. Include URL if available]
+            </footer>
+        </article>
+
+        <!-- ============================================
+             VISUALIZATION 2: TABLEAU PUBLIC EXAMPLE
+
+             Publish to YOUR Tableau Public account (required).
+             Get embed code and paste below.
+             ============================================ -->
+        <article>
+            <header>
+                <h2>2. [Title of Your Second Visualization]</h2>
+            </header>
+
+            <h3>Context & Question</h3>
+            <p>
+                [What question does this visualization address?]
+            </p>
+
+            <h3>Design Decisions</h3>
+            <p>
+                [Explain your design choices. Why did you choose this chart type?
+                What visual encodings did you use? What interactive features
+                did you include and why?]
+            </p>
+
+            <!-- TABLEAU EMBED CODE -->
+            <!-- ==========================================
+                 Paste your Tableau Public embed code here.
+                 Must be published in YOUR account (not instructor's).
+                 Delete the placeholder div below.
+                 ========================================== -->
+
+            <div style="border: 2px dashed #ccc; padding: 20px; text-align: center; margin: 20px 0;">
+                <p><strong>⚠️ REPLACE THIS SECTION</strong></p>
+                <p>Paste your Tableau Public embed code here</p>
+                <p><small>Delete this placeholder div entirely and replace with your embed code</small></p>
+            </div>
+
+            <h3>Key Insights</h3>
+            <p>
+                [What did you discover?]
+            </p>
+
+            <footer>
+                <strong>Data Source:</strong> [Dataset information and URL]
+            </footer>
+        </article>
+
+        <!-- ============================================
+             VISUALIZATION 3: STATIC IMAGE EXAMPLE
+             For Python/R/other tools - export as image
+             ============================================ -->
+        <article>
+            <header>
+                <h2>3. [Title of Your Third Visualization]</h2>
+            </header>
+
+            <h3>Context & Question</h3>
+            <p>
+                [What question does this visualization address?]
+            </p>
+
+            <h3>Design Decisions</h3>
+            <p>
+                [Explain your design choices. What tool did you use
+                to create this? Why this visualization approach?]
+            </p>
+
+            <!-- STATIC IMAGE -->
+            <!-- ==========================================
+                 Export as PNG/SVG, save in same folder.
+                 Include image file in your ZIP.
+                 ========================================== -->
+
+            <img src="[your-image-filename.png]"
+                 alt="[Brief description of visualization]"
+                 style="max-width: 100%; height: auto; border: 1px solid #ddd;">
+
+            <h3>Key Insights</h3>
+            <p>
+                [What did you discover?]
+            </p>
+
+            <footer>
+                <strong>Data Source:</strong> [Dataset information and URL]
+            </footer>
+        </article>
+
+        <!-- ============================================
+             VISUALIZATION 4 - Copy a template above
+             Minimum 5 visualizations required!
+             ============================================ -->
+        <article>
+            <header>
+                <h2>4. [Title of Your Fourth Visualization]</h2>
+            </header>
+
+            <h3>Context & Question</h3>
+            <p>[Your text here]</p>
+
+            <h3>Design Decisions</h3>
+            <p>[Your text here]</p>
+
+            <!-- Add your visualization here (copy from examples above) -->
+            <div style="border: 2px dashed #ccc; padding: 40px; text-align: center;">
+                <p><strong>Add your visualization here</strong></p>
+                <p>Copy one of the templates above (Vega-Lite, Tableau, or Image)</p>
+            </div>
+
+            <h3>Key Insights</h3>
+            <p>[Your text here]</p>
+
+            <footer>
+                <strong>Data Source:</strong> [Dataset information]
+            </footer>
+        </article>
+
+        <!-- ============================================
+             VISUALIZATION 5 - Copy a template above
+             This is the minimum. You can add more!
+             ============================================ -->
+        <article>
+            <header>
+                <h2>5. [Title of Your Fifth Visualization]</h2>
+            </header>
+
+            <h3>Context & Question</h3>
+            <p>[Your text here]</p>
+
+            <h3>Design Decisions</h3>
+            <p>[Your text here]</p>
+
+            <!-- Add your visualization here -->
+            <div style="border: 2px dashed #ccc; padding: 40px; text-align: center;">
+                <p><strong>Add your visualization here</strong></p>
+            </div>
+
+            <h3>Key Insights</h3>
+            <p>[Your text here]</p>
+
+            <footer>
+                <strong>Data Source:</strong> [Dataset information]
+            </footer>
+        </article>
+
+        <!-- ============================================
+             ADD MORE VISUALIZATIONS: Copy an <article> block above
+             ============================================ -->
+
+        <!-- ============================================
+             REFLECTION (Optional but recommended)
+             ============================================ -->
+        <article>
+            <header>
+                <h2>Reflection</h2>
+            </header>
+            <p>
+                [OPTIONAL: What did you learn through creating this portfolio?
+                How did your understanding of data visualization principles evolve?
+                What challenges did you face and how did you overcome them? What
+                would you do differently next time?]
+            </p>
+        </article>
+
+        <!-- ============================================
+             AI USAGE DOCUMENTATION (If applicable)
+             See ASSIGNMENT.md for AI policy requirements
+             ============================================ -->
+        <article>
+            <header>
+                <h2>AI Usage Documentation</h2>
+            </header>
+            <p>
+                [IF YOU USED AI: Document what you used it for and include shared conversation links or PDFs.
+                Create an AI_Documentation folder in your ZIP with these files.
+                IF YOU DID NOT USE AI: Delete this entire AI Usage Documentation section.]
+            </p>
+            <p>
+                <small><em>Remember: All AI usage must be documented. Include links to shared conversations
+                or PDF exports in a folder called AI_Documentation in your ZIP archive.</em></small>
+            </p>
+        </article>
+
+        <!-- ============================================
+             FOOTER
+             ============================================ -->
+        <footer style="margin-top: 3rem; padding-top: 2rem; border-top: 1px solid #ddd;">
+            <p>Created by [Your Name] | Principles of Data Visualization | KSE Fall 2025</p>
+            <p>Last updated: [Date]</p>
+        </footer>
+
+    </main>
+
+    <!-- ============================================
+         BEFORE SUBMITTING:
+
+         ✓ All [placeholders] replaced with your content
+         ✓ Minimum 5 visualizations included
+         ✓ Video link working and embedded
+         ✓ Introduction explains unified theme (3-5 sentences)
+         ✓ Each viz has: Context, Design, Insights, Source
+         ✓ ZIP named: Portfolio_[LastName]_[FirstName].zip
+         ✓ All datasets and AI documentation included in ZIP
+
+         📋 Complete checklist in ASSIGNMENT.md
+
+         DELETE THIS COMMENT BLOCK BEFORE SUBMITTING!
+         ============================================ -->
+
+</body>
+</html>
